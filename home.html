@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Étudiant ORT Montreuil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+<div class="flex-grow w-full max-w-md mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center text-blue-900 mb-8">Carte Étudiant ORT Montreuil</h1>
+    <div class="bg-card rounded-lg p-6 card-shadow">
+        <div class="flex justify-between items-center mb-6">
+            <img src="https://via.placeholder.com/50" alt="Logo ORT" class="h-12">
+            <span class="text-sm text-gray-600">Carte Numéro 61030</span>
+        </div>
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <p class="text-xl font-semibold text-gray-800">Jordan Hayat</p>
+                <p class="text-sm text-gray-600">1TSS1 A</p>
+            </div>
+            <div class="text-right">
+                <p class="text-sm text-gray-600">Validité</p>
+                <p class="text-sm font-semibold">2020/2021</p>
+            </div>
+        </div>
+        <div class="flex justify-center mb-6">
+            <img src="https://via.placeholder.com/100x100" alt="QR Code" class="h-28 w-28">
+        </div>
+        <div class="flex justify-center">
+            <button class="bg-black text-white p-3 rounded-lg flex items-center hover:bg-gray-800 transition duration-300">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 16v-2h2v2h-2zm2-4h-2v-6h2v6z"></path>
+                </svg>
+                Ajouter à Apple Pay
+            </button>
+        </div>
+    </div>
+</div>
+<div class="fixed bottom-0 w-full bg-white shadow-lg">
+    <div class="flex justify-around py-4">
+        <button onclick="window.location.href='history.html'" class="text-blue-900 hover:text-blue-600">
+            <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 Pas d10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14h-1v6l4.25 2.55.75-1.23L12 11V6z"></path>
+            </svg>
+            Historique Entrées
+        </button>
+        <button onclick="window.location.href='balance.html'" class="text-blue-900 hover:text-blue-600">
+            <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm0-4h-2V8h2v6z"></path>
+            </svg>
+            Solde Cantine
+        </button>
+        <button onclick="window.location.href='history.html#cafeteria'" class="text-blue-900 hover:text-blue-600">
+            <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2z"></path>
+            </svg>
+            Entrées Cantine
+        </button>
+        <button onclick="window.location.href='recharge.html'" class="text-blue-900 hover:text-blue-600">
+            <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm0-4h-2V8h2v6z"></path>
+            </svg>
+            Recharger Solde
+        </button>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

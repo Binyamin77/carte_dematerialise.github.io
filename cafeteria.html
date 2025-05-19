@@ -5,57 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historique des Entrées Cantine ORT Montreuil</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .card-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .bg-gradient-card {
+            background: linear-gradient(135deg, #f0f4f8 0%, #e0f7fa 100%);
+            border-radius: 16px;
+            padding: 20px;
+        }
+        .entry-hover {
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        .entry-hover:hover {
+            background: #e0f7fa;
+            transform: translateX(5px);
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            transform: scale(1.1);
+            color: #f59e0b;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 font-inter discussion min-h-screen flex flex-col">
+<body class="bg-gray-50 font-inter min-h-screen flex flex-col">
+<!-- Contenu principal -->
 <div class="flex-grow w-full max-w-md mx-auto p-6">
-    <h1 class="text-3xl font-bold text-center text-blue-900 mb-8">Historique des Entrées Cantine</h1>
-    <div class="bg-white rounded-2xl p-6 card-shadow">
+    <h1 class="text-3xl font-bold text-center text-blue-900 mb-6">Historique des Entrées Cantine</h1>
+    <div class="bg-gradient-card card-shadow">
         <h2 class="text-xl font-semibold text-gray-800 mb-4">Repas à la Cantine</h2>
-        <ul class="space-y-4">
-            <li class="flex justify-between text-sm">
-                <span>07/05/2025 - 12:15</span>
-                <span class="text-blue-600">Repas</span>
+        <ul class="space-y-3">
+            <li class="entry-hover flex justify-between items-center p-3 border-b border-gray-200">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 18a8 8 0 01-8-8 8 8 0 0116 0 8 8 0 01-8 8zm0-14h-1v6l4.25 2.55.75-1.23L12 11V6z"></path>
+                    </svg>
+                    <span class="text-sm text-gray-600">07/05/2025 - 12:15</span>
+                </div>
+                <span class="text-sm font-semibold text-blue-600">Repas</span>
             </li>
-            <li class="flex justify-between text-sm">
-                <span>06/05/2025 - 12:30</span>
-                <span class="text-blue-600">Repas</span>
+            <li class="entry-hover flex justify-between items-center p-3 border-b border-gray-200">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 18a8 8 0 01-8-8 8 8 0 0116 0 8 8 0 01-8 8zm0-14h-1v6l4.25 2.55.75-1.23L12 11V6z"></path>
+                    </svg>
+                    <span class="text-sm text-gray-600">06/05/2025 - 12:30</span>
+                </div>
+                <span class="text-sm font-semibold text-blue-600">Repas</span>
             </li>
-            <li class="flex justify-between text-sm">
-                <span>05/05/2025 - 12:20</span>
-                <span class="text-blue-600">Repas</span>
+            <li class="entry-hover flex justify-between items-center p-3">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 18a8 8 0 01-8-8 8 8 0 0116 0 8 8 0 01-8 8zm0-14h-1v6l4.25 2.55.75-1.23L12 11V6z"></path>
+                    </svg>
+                    <span class="text-sm text-gray-600">05/05/2025 - 12:20</span>
+                </div>
+                <span class="text-sm font-semibold text-blue-600">Repas</span>
             </li>
         </ul>
     </div>
 </div>
+
+<!-- Barre de navigation fixe -->
 <div class="fixed bottom-0 w-full bg-white shadow-lg">
     <div class="flex justify-around py-4">
-        <button onclick="window.location.href='home.html'" class="text-blue-900 hover:text-yellow-500 transform hover:scale-110 transition duration-200">
+        <button onclick="window.location.href='home.html'" class="nav-button text-blue-900">
             <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 18a8 8 0 01-8-8 8 8 0 0116 0 8 8 0 01-8 8zm0-14h-1v6l4.25 2.55.75-1.23L12 11V6z"></path>
             </svg>
             Retour
         </button>
-        <button onclick="window.location.href='history.html'" class="text-blue-900 hover:text-yellow-500 transform hover:scale-110 transition duration-200">
+        <button onclick="window.location.href='history.html'" class="nav-button text-blue-900">
             <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 18a8 8 0 01-8-8 8 8 0 0116 0 8 8 0 01-8 8zm0-14h-1v6l4.25 2.55.75-1.23L12 11V6z"></path>
             </svg>
             Entrées
         </button>
-        <button onclick="window.location.href='balance.html'" class="text-blue-900 hover:text-yellow-500 transform hover:scale-110 transition duration-200">
+        <button onclick="window.location.href='balance.html'" class="nav-button text-blue-900">
             <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm1 16h-2v-2h2v2zm0-4h-2V8h2v6z"></path>
             </svg>
             Solde
         </button>
-        <button class="text-blue-900 hover:text-yellow-500 transform hover:scale-110 transition duration-200 bg-yellow-100 rounded-full p-2">
+        <button class="nav-button text-blue-900 bg-yellow-100 rounded-full p-2">
             <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 18a8 8 0 01-8-8 8 8 0 0116 0 8 8 0 01-8 8zm-1-13h2v6h-2z"></path>
             </svg>
             Cantine
         </button>
-        <button onclick="window.location.href='recharge.html'" class="text-blue-900 hover:text-yellow-500 transform hover:scale-110 transition duration-200">
+        <button onclick="window.location.href='recharge.html'" class="nav-button text-blue-900">
             <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm1 16h-2v-2h2v2zm0-4h-2V8h2v6z"></path>
             </svg>

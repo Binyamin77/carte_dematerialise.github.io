@@ -5,66 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Recharger Solde ORT Montreuil</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1e3a8a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <style>
+        .card-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .bg-gradient-card {
+            background: linear-gradient(135deg, #f0f4f8 0%, #e0f7fa 100%);
+        }
+        .button-hover {
+            transition: all 0.3s ease;
+        }
+        .button-hover:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .progress-bar {
+            height: 8px;
+            background: #e0e7ff;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 font-inter min-h-screen flex flex-col">
+<!-- Contenu principal -->
 <div class="flex-grow w-full max-w-md mx-auto p-6">
-    <h1 class="text-3xl font-bold text-center text-blue-900 mb-8">Recharger le Solde Cantine</h1>
-    <div class="bg-white rounded-2xl p-6 card-shadow">
+    <h1 class="text-3xl font-bold text-center text-blue-900 mb-6">Recharger le Solde Cantine</h1>
+    <div class="bg-gradient-card rounded-2xl p-6 card-shadow">
+        <!-- Solde restant -->
+        <div class="mb-6 text-center">
+            <p class="text-lg font-semibold text-gray-700">Solde actuel : <span class="text-blue-600">15,50 €</span></p>
+            <div class="progress-bar mt-2">
+                <div class="progress" style="width: 31%;"></div>
+            </div>
+        </div>
+        <!-- Montant à recharger -->
         <p class="text-lg font-semibold text-gray-800 mb-4">Montant à recharger</p>
-        <input type="number" placeholder="10,00 €" class="p-3 w-full rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <button class="bg-black text-white p-3 rounded-lg flex items-center justify-center w-full mt-4 hover:bg-gray-900 transition duration-300 transform hover:scale-105">
-            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm1 16h-2v-2h2v2zm0-4h-2V8h2v6z"></path>
-            </svg>
-            Payer avec Apple Pay
-        </button>
-        <button class="bg-blue-600 text-white p-3 rounded-lg flex items-center justify-center w-full mt-3 hover:bg-blue-700 transition duration-300 transform hover:scale-105">
-            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm1 16h-2v-2h2v2zm0-4h-2V8h2v6z"></path>
-            </svg>
-            Payer avec Google Pay
-        </button>
-        <button class="bg-gray-600 text-white p-3 rounded-lg flex items-center justify-center w-full mt-3 hover:bg-gray-700 transition duration-300 transform hover:scale-105">
-            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm1 16h-2v-2h2v2zm0-4h-2V8h2v6z"></path>
-            </svg>
-            Payer avec Carte Bancaire
-        </button>
+        <input type="number" placeholder="10,00 €" class="p-3 w-full rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4">
+        <!-- Options de paiement -->
+        <div class="space-y-4">
+            <button class="bg-black text-white p-4 rounded-xl flex items-center justify-center w-full button-hover">
+                <img src="images/Apple_logo_grey.svg.png" alt="Apple Pay" class="w-5 h-5 mr-2">
+                Payer avec Apple Pay
+            </button>
+            <button class="bg-blue-600 text-white p-4 rounded-xl flex items-center justify-center w-full button-hover">
+                <img src="images/google.jpg" alt="Google Pay" class="w-5 h-5 mr-2">
+                Payer avec Google Pay
+            </button>
+            <button class="bg-gray-600 text-white p-4 rounded-xl flex items-center justify-center w-full button-hover">
+                <img src="images/carte.webp" alt="Carte Bancaire" class="w-5 h-5 mr-2">
+                Payer avec Carte Bancaire
+            </button>
+        </div>
     </div>
 </div>
+
+<!-- Barre de navigation fixe -->
 <div class="fixed bottom-0 w-full bg-white shadow-lg">
     <div class="flex justify-around py-4">
-        <button onclick="window.location.href='home.html'" class="text-blue-900 hover:text-yellow-500 transform hover:scale-110 transition duration-200">
+        <button onclick="window.location.href='home.html'" class="text-blue-900 hover:text-yellow-500 transform transition duration-200 hover:scale-110">
             <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 18a8 8 0 01-8-8 8 8 0 0116 0 8 8 0 01-8 8zm0-14h-1v6l4.25 2.55.75-1.23L12 11V6z"></path>
             </svg>
             Retour
         </button>
-        <button onclick="window.location.href='history.html'" class="text-blue-900 hover:text-yellow-500 transform hover:scale-110 transition duration-200">
+        <button onclick="window.location.href='history.html'" class="text-blue-900 hover:text-yellow-500 transform transition duration-200 hover:scale-110">
             <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 18a8 8 0 01-8-8 8 8 0 0116 0 8 8 0 01-8 8zm0-14h-1v6l4.25 2.55.75-1.23L12 11V6z"></path>
             </svg>
             Entrées
         </button>
-        <button onclick="window.location.href='balance.html'" class="text-blue-900 hover:text-yellow-500 transform hover:scale-110 transition duration-200">
+        <button onclick="window.location.href='balance.html'" class="text-blue-900 hover:text-yellow-500 transform transition duration-200 hover:scale-110">
             <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm1 16h-2v-2h2v2zm0-4h-2V8h2v6z"></path>
             </svg>
             Solde
         </button>
-        <button onclick="window.location.href='cafeteria.html'" class="text-blue-900 hover:text-yellow-500 transform hover:scale-110 transition duration-200">
+        <button onclick="window.location.href='cafeteria.html'" class="text-blue-900 hover:text-yellow-500 transform transition duration-200 hover:scale-110">
             <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 18a8 8 0 01-8-8 8 8 0 0116 0 8 8 0 01-8 8zm-1-13h2v6h-2z"></path>
             </svg>
             Cantine
         </button>
-        <button class="text-blue-900 hover:text-yellow-500 transform hover:scale-110 transition duration-200 bg-yellow-100 rounded-full p-2">
+        <button class="text-blue-900 hover:text-yellow-500 transform transition duration-200 hover:scale-110 bg-yellow-100 rounded-full p-2">
             <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm1 16h-2v-2h2v2zm0-4h-2V8h2v6z"></path>
             </svg>

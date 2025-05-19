@@ -5,35 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion ORT Montreuil</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0f7fa 0%, #f3f4f6 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            animation: cardFadeIn 1s ease-in-out;
+        }
+
+        }
+        .input-field::placeholder {
+            color: #9ca3af;
+        }
+
+        .glow-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #60a5fa;
+            background: #60a5fa;
+            color: white;
+        }
+        .secondary-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #d1d5db;
+            background: #f9fafb;
+            color: #1e3a8a;
+        }
+        .secondary-button:hover {
+            background: linear-gradient(90deg, #e5e7eb, #fefce8);
+            box-shadow: 0 0 15px rgba(250, 204, 21, 0.5);
+            transform: translateY(-2px);
+        }
+        .logo-animation {
+            animation: logoFadeIn 1.5s ease-in-out;
+            transition: transform 0.3s ease;
+        }
+        .logo-animation:hover {
+            transform: scale(1.1);
+        }
+        @keyframes cardFadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes logoFadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            transform: scale(1.1);
+            color: #facc15;
+        }
+        .divider {
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
+        }
+    </style>
 </head>
-<body class="bg-blue-950 font-inter flex items-center justify-center min-h-screen">
-<div class="bg-white rounded-2xl p-8 max-w-md w-full card-shadow animate-fade-in">
+<body class="font-inter flex items-center justify-center min-h-screen">
+<!-- Carte de connexion -->
+<div class="glass-card max-w-md w-full">
     <div class="flex justify-center mb-6">
-        <img src="https://via.placeholder.com/100?text=ORT" alt="Logo ORT Montreuil" class="h-16">
+        <img src="images/ort.png" alt="Logo ORT Montreuil" class="h-16 logo-animation">
     </div>
     <h1 class="text-3xl font-bold text-center text-blue-900 mb-6">Connexion ORT Montreuil</h1>
     <div class="space-y-4">
-        <input type="text" placeholder="Nom d'utilisateur" class="p-3 w-full rounded-lg border border-gray-200 text-black focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <input type="password" placeholder="Mot de passe" class="p-3 w-full rounded-lg border border-gray-200 text-black focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <button onclick="window.location.href='home.html'" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg w-full transition duration-300 transform hover:scale-105">Se connecter</button>
+        <input type="text" placeholder="Nom d'utilisateur" class="p-3 w-full rounded-lg input-field focus:outline-none">
+        <input type="password" placeholder="Mot de passe" class="p-3 w-full rounded-lg input-field focus:outline-none">
+        <button onclick="window.location.href='home.html'" class="glow-button p-3 rounded-lg w-full">Se connecter</button>
     </div>
     <div class="flex items-center justify-center my-4">
-        <hr class="w-1/3 border-gray-300">
-        <span class="mx-2 text-gray-500">ou</span>
-        <hr class="w-1/3 border-gray-300">
+        <hr class="w-1/3 divider">
+        <span class="mx-2 text-gray-600">ou</span>
+        <hr class="w-1/3 divider">
     </div>
-    <button onclick="biometricLogin()" class="bg-gray-800 hover:bg-gray-900 text-white p-3 rounded-lg w-full flex items-center justify-center transition duration-300 transform hover:scale-105">
-        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 18a8 8 0 01-8-8 8 8 0 0116 0 8 8 0 01-8 8zm1-12h-2v6h2V8z"></path>
-        </svg>
+    <button onclick="biometricLogin()" class="secondary-button p-3 rounded-lg w-full flex items-center justify-center">
+        <img src="images/Face_ID_logo.svg.png" alt="Face ID Icon" class="w-5 h-5 mr-2">
         Face ID / Touch ID
     </button>
 </div>
+
+<!-- Barre de navigation fixe -->
 <div class="fixed bottom-0 w-full bg-white shadow-lg">
     <div class="flex justify-center py-4">
-        <button onclick="alert('Vous êtes sur la page de connexion')" class="text-blue-900 hover:text-blue-600 transform hover:scale-110 transition duration-200">
+        <button onclick="alert('Vous êtes sur la page de connexion')" class="nav-button text-blue-900">
             <svg class="w-6 h-6 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 18a8 8 0 01-8-8 8 8 0 0116 0 8 8 0 01-8 8zm0-14h-1v6l4.25 2.55.75-1.23L12 11V6z"></path>
             </svg>
@@ -41,6 +107,7 @@
         </button>
     </div>
 </div>
+
 <script src="app.js"></script>
 </body>
 </html>
